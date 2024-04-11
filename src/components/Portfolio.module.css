@@ -1,0 +1,113 @@
+.switchToggle{
+    background-image: url('../img/icon-filter.png'); 
+background-size:60%; 
+background-position: center center;
+background-repeat: no-repeat;
+}
+
+
+.switchSLideIn{
+    background-image: url('../img/icon-search.png'); 
+    background-size:60%; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    animation: slidein 0.5s forwards;
+    }
+
+
+    .switchSLideOut{
+        background-image: url('../img/icon-filter.png'); 
+        background-size:60%; 
+        background-position: center center;
+        background-repeat: no-repeat;
+        animation: slideOut 0.5s forwards;
+        }
+
+    
+        .stilePara{
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;  
+          overflow: hidden;
+
+          }
+    
+
+    .resImgFilter{
+    width: 100px;  
+    }
+
+    .ImgSizeCardS{
+    width: 40px;  
+    }
+
+
+    .ArrowRotate{
+      transform: rotate(90deg);
+      width: 20px;
+      opacity: 60%;
+    }
+
+    .ArrowRotate1{
+      transform: rotate(-90deg);
+      width: 20px;
+      opacity: 60%;
+    }
+
+
+    .scaleImg{
+      transform: scale(1);
+      transition: 0.5s;
+    }
+
+    .scaleImg:hover{
+      transform: scale(1.1);
+      opacity: 0.5;
+    }
+
+    .bgSlide{
+    background-image: url(../img/bg-slide-trasparent.png);
+    background-repeat: no-repeat;
+    background-size: contain; 
+    background-position: center center;
+
+    }
+
+
+    .bgSlide:hover{
+      background-image: url(../img/bg-slide.png);
+      background-repeat: no-repeat;
+      background-size: contain; 
+      background-position: center center;
+      transition: 0.5s;
+      }
+
+
+  /* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .resImgFilter{
+    width: 80px;  
+    }  
+}
+
+
+@keyframes slidein {
+    from {
+      transform: translateX(0);
+    }
+  
+    to {
+      transform: translateX(40px);
+    }
+  }
+
+
+  @keyframes slideOut {
+    from {
+      transform: translateX(40px);
+    }
+  
+    to {
+      transform: translateX(0);
+    }
+  }

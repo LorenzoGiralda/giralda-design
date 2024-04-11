@@ -1,0 +1,12 @@
+.chiSono{
+margin-top: 250px;    
+}
+
+
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .chiSono{
+        margin-top: 100px;    
+        }
+    }

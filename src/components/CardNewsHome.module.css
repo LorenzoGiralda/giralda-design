@@ -1,0 +1,8 @@
+.hoverPortfolio{
+cursor: pointer;
+background-color: rgba(0, 0, 0, 0.30);   
+}
+
+.hoverPortfolio:hover{
+    background-color: rgba(0, 0, 0, 0.70);  
+}

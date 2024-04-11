@@ -1,0 +1,21 @@
+.resizeContact{
+width: 20px;    
+}
+
+.Contact{
+    width: 40px;    
+    }
+
+
+
+
+    .Maps{
+   height: 505px;    
+    }
+
+
+@media (max-width: 575.98px) {
+.Maps{
+height: 293px;    
+}
+}

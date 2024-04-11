@@ -1,0 +1,21 @@
+.hoverImg{
+transition: 0.5s;    
+}
+
+.hoverTxt:hover .hoverImg{
+transform: scale(1.2);
+}
+
+
+.hoverTxt h4{
+font-weight: normal;
+font-size: 20px;    
+}
+
+.hoverTxt:hover h4{
+    font-weight: bold;   
+    }
+
+h4{
+transition: 0.5s;    
+}

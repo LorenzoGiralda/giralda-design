@@ -1,0 +1,52 @@
+.rotate{
+transition: 0.5s;
+transform: rotate(180deg);    
+}
+
+.rotate1{
+transition: 0.5s;
+transform: rotate(0deg);    
+}
+
+.hoverSoft{
+background-color: white;
+cursor: pointer; 
+}
+
+.hoverSoft:hover{
+background-color: orange;   
+}
+
+
+.slildeInit{
+ animation: slide-down 0s ease-in forwards ; 
+}
+
+.slildeUp{
+animation: slide-up 0.5s ease-out forwards;
+}
+
+
+.slildeDown{
+animation: slide-down 0.5s ease-in forwards ;    
+}
+
+
+@keyframes slide-up{
+from{
+transform: translateY(-100%);
+}
+to{
+transform: translateY(0);
+}    
+}
+
+
+@keyframes slide-down{
+from{
+transform: translateY(0);
+}
+to{
+transform: translateY(-100%);
+}    
+}

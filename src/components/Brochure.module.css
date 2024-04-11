@@ -1,0 +1,7 @@
+.HoverBrochure{
+color: black;    
+}
+
+.HoverBrochure:hover{
+color: orange; 
+};  
