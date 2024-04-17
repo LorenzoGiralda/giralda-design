@@ -1,0 +1,10 @@
+.MarginLeftCard{
+margin-left: 0px;
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .MarginLeftCard{
+        margin-left: 31px;
+        }
+    }
