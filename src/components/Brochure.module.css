@@ -5,3 +5,12 @@ color: black;
 .HoverBrochure:hover{
 color: orange; 
 };  
+
+
+.BrochureDark{
+color: rgb(177, 2, 2);    
+}
+    
+.BrochureDark:hover{
+ color: orange; 
+}; 

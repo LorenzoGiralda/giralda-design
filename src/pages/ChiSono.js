@@ -1,10 +1,12 @@
 import { Outlet, NavLink } from "react-router-dom";
+import Seo from './Seo'
 // import { useSelector, useDispatch } from 'react-redux';
 // import { ChangeByPayload } from '../store/ActiveLinkLogic';
 
 import IconChiSono from '../img/chi-sono.png'
 import ImgMe from '../img/lorenzo-giralda.png'
 import IconDownload from '../img/icon-download.png'
+import IconDownload2 from '../img/icon-download-dark.png'
 import CvPdf from '../img/CV Lorenzo Giralda.pdf'
 import BgChiSono from '../img/sfondo-chi-sono.jpg'
 
@@ -47,6 +49,7 @@ testo2: 'Dai miei dati anagrafici ai miei hobby, scoprirete la mia figura sia da
 img: ImgMe,
 link: CvPdf,
 icon: IconDownload,
+icon2: IconDownload2,
 testoLink: 'Scarica il Cv in pdf',    
 }
 
@@ -170,6 +173,13 @@ const datiContatti = [
 const ChiSono = () => {
 return(
 <>
+
+<Seo
+title = "Chi sono"
+description = "Scopri il mio profilo professionale"
+keywords = "curriculum online - luogo e data di nascita - studi e qualifiche - esperienze lavorative - info lavorative - i miei hobby - contatti"
+></Seo>
+
 <ContainerBasic>
 <TitleSection
 img = {IconChiSono }
@@ -181,6 +191,7 @@ testo2 = {datiChiSonoMe.testo2}
 img = {datiChiSonoMe.img}
 link = {datiChiSonoMe.link}
 icon = {datiChiSonoMe.icon}
+icon2 = {datiChiSonoMe.icon2}
 testoLink = {datiChiSonoMe.testoLink}
 ></ChiSonoMe>
 </ContainerBasic>

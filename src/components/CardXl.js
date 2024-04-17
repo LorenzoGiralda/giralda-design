@@ -2,6 +2,7 @@
 
 import { useSelector, useDispatch } from 'react-redux';
 import { changePageToggleXl } from '../store/ToggleFilter';
+import CardXlModule from './CardXl.module.css'
 
 import loc from '../img/locandina-carnevale.png'
 
@@ -22,6 +23,7 @@ const CardXl = (props) => {
 
   const toggleValue = useSelector((state) => state.ToggleFilter.value)
 
+  const ValueView = useSelector((state) => state.ToggleLight.value)
 
 return(
 
@@ -32,10 +34,10 @@ return(
 props.dati === 'Portfolio' &&
 
 props.MapXl.map( dato =>
-<div className="col-12 col-lg-6 bg-light p-2 d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center rounded shadow">
+<div className={`${ValueView ? 'bg-light' : 'bg-secondary text-light'} col-12 col-lg-6 p-2 d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center rounded shadow`}>
 
 <div className='d-flex justify-content-between justify-content-lg-end col-12'>
-<h3 className='d-block d-lg-none mt-2 mb-2 mb-lg-0 w-100 text-center'>{dato.titolo}</h3>
+<h3 className={`${CardXlModule.MarginLeftCard} d-block d-lg-none mt-2 mb-2 mb-lg-0 w-100 text-center`}>{dato.titolo}</h3>
 <Link onClick={() => toggleValue === 'false' ? dispatch(changePageToggleXl()) : '' } to=".." relative="path" type="button" class="btn-close end-0 p-2 pt-3" aria-label="Close"></Link> 
 </div>
 
@@ -89,7 +91,7 @@ props.dati === 'Blog' &&
 
 props.MapXl.map( dato =>
 
-<div className="col-12 col-lg-6 bg-light p-2 d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center rounded shadow">
+<div className={`${ValueView ? 'bg-light' : 'bg-secondary text-light'} col-12 col-lg-6 p-2 d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center rounded shadow`}>
 
 <div className='d-flex justify-content-between justify-content-lg-end col-12'>
 <h3 className='d-block d-lg-none mt-2 w-100 text-center'>{dato.titolo}</h3>

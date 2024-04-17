@@ -16,7 +16,7 @@ const ToggleLight = createSlice({
 
     reducers:{
 
-        ChangeToggle: (state) => {
+        ChangeToggleView: (state) => {
         state.value = !state.value    
         }
     }
@@ -24,6 +24,6 @@ const ToggleLight = createSlice({
 });
 
 
-export const {ChangeToggle} = ToggleLight.actions
+export const {ChangeToggleView} = ToggleLight.actions
 
 export default ToggleLight.reducer

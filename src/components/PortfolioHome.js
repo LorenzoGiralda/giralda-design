@@ -1023,10 +1023,12 @@ const PortfolioHome = () => {
     // CAMBIARE L'ACTIVE DEL NAVBAR AL CLICK SULL'ELEMENTO DEL COMPONENTE CARDPORTFOLIOHOME!
     // COMBINARE UNA LOGICA REDUX ANCHE QUI? STUDIARE COME FARLA....
     useEffect(() => {
-    if(CatValue.payload !== ''){
+    if(CatValue && CatValue.payload !== ''){
     const filtra = PortfolioValue.filter(dato => dato.categoria === CatValue.payload)
     ChangePortofolio(filtra)
     console.log(CatValue,'dato')
+    }else if(CatValue === ''){
+    ChangePortofolio(PortfolioValue)
     } else{
     ChangePortofolio(PortfolioValue)
     }

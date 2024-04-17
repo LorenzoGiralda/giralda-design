@@ -1,4 +1,4 @@
-import { Outlet, NavLink, Form } from "react-router-dom";
+import Seo from './Seo'
 import { useState } from "react";
 import ContainerBasic from "../components/ContainerBasic";
 
@@ -9,6 +9,8 @@ import News from '../img/icon-blog.png'
 
 import BackHome from '../img/sfondo-chi-sono.jpg'
 import BackTools from '../img/sfondo-strumenti.jpg'
+import BgBlog from '../img/sfondo-blog.jpg'
+import BgWeb from '../img/sfondo-web.jpg'
 
 import Photoshop from "../img/photoshop.png";
 import Illustrator from "../img/illustrator.png";
@@ -227,10 +229,16 @@ const HomePage = () => {
     const statoSoft = (para) => {
     changeSoftware(para)    
     }
-    
+        
 
 return(
 <>
+<Seo
+title = "Lorenzo Giralda - graphic e web designer - developer a Bolsena, Valentano, Marta, Capodimonte, Montefiascone, Acquapendente."
+description = "Sono un grafico e web designer - developer residente a Grotte di Castro, mi occupo sia di pubblicità offline che online, per garantire una comunicazione professionale a 360°"
+keywords = "il mio profilo lavorativo - software utilizzati - lavorazioni - articoli - contattami"
+></Seo>
+
 <SlideShow></SlideShow>
 
 <ContainerBasic>
@@ -280,7 +288,7 @@ categoria = {dato.categoria}
 )}</ContainerBasic>
 
 <Background
-bg = {BackHome} 
+bg = {BgWeb} 
 ></Background>
 
 <ContainerBasic>
@@ -292,7 +300,7 @@ title="SCOPRI TUTTI I PRODOTTI E SERVIZI OFFERTI!"
 </ContainerBasic>
 
 <Background
-bg = {BackHome} 
+bg = {BgBlog} 
 ></Background>
 
 <ContainerBasic>

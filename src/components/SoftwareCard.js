@@ -1,4 +1,5 @@
 import SoftwareStile from "./SoftwareCard.module.css";
+import { useSelector, useDispatch } from 'react-redux';
 
 import { useState } from "react";
 
@@ -14,12 +15,13 @@ const hoverSoft = SoftwareStile.hoverSoft;
 
 const SoftwareCard = (props) => {
 
+  const ValueView = useSelector((state) => state.ToggleLight.value)
 
   const [statoRotate, changeRotate] = useState(false)
 
   return (
     <div className={`${props.title === 'GIT' ? 'mb-0' : 'mb-5'} mb-lg-4 col-12 col-lg-3 p-3 bg-trasparent d-flex flex-column`}>
-      <div className={`p-2 bg-light rounded shadow overflow-hidden`}>
+      <div className={`${ValueView ? 'bg-light' : 'bg-secondary text-light'} p-2 rounded shadow overflow-hidden`}>
         <div className="col-12 d-flex justify-content-between align-items-center">
           <div className="d-flex align-items-center">
             <div className="me-2">
@@ -42,7 +44,7 @@ const SoftwareCard = (props) => {
           </div>
         </div>
 
-        <div className={`collapse m-0 mt-2 p-0 bg-light`} id={props.toggle}>
+        <div className={`collapse m-0 mt-2 p-0 t${ValueView ? 'bg-light' : 'bg-secondary text-light'}`} id={props.toggle}>
         <p 
           className={`m-0
           `} 

@@ -1,4 +1,5 @@
 import Background from "./Background";
+import { useSelector, useDispatch } from 'react-redux';
 
 import BgContatti from '../img/sfondo-contatti.jpg'
 import ContainerBasic from "./ContainerBasic";
@@ -45,6 +46,9 @@ img: IconPosition},
 
 
 const ContattiHome = () => {
+
+    const ValueView = useSelector((state) => state.ToggleLight.value)
+
 return(
 <>
 <Background
@@ -56,8 +60,8 @@ bg = {BgContatti}
 img = {IconContatti}
 title = 'CONTATTI'
 ></TitleSection>
-<div className="bg-light">
-<p className="p-3 bg-light">Eccoci alla pagina finale del mio sito/portfolio. Dopo aver scoperto chi sono, le mie tipologie di lavori e magari qualche notizia sul mondo creativo... sei pronto a contattarmi!?
+<div className="">
+<p className={`p-3 ${ValueView ? 'bg-light' : 'text-light'}`}>Eccoci alla pagina finale del mio sito/portfolio. Dopo aver scoperto chi sono, le mie tipologie di lavori e magari qualche notizia sul mondo creativo... sei pronto a contattarmi!?
 <br></br><br></br>
 In questo momento sono alla ricerca di un possibile lavoro part o full time da dipendente oppure come freelance con ritenuta d'acconto. In ogni caso se vorrai sentirmi anche solo per chiedere consigli, oppure hai proposte interessanti da farmi, non esitare a contattarmi.</p> 
 </div>  

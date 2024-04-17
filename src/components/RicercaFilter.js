@@ -14,7 +14,7 @@ return(
 <div className='d-flex flex-wrap col-12 justify-content-center'>
 
 {/* BARRA RICERCA */}
-<div className="col-12 col-lg-5 p-2 mt-5 bg-light">
+<div className="col-12 col-lg-5 p-2 mt-5">
 <div className="d-flex align-items-center h-100 shadow col-12">
 <div className='bg-light p-2 h-100 border border-secondary border-2 border-end-0' 
 style={{'width': '55px','borderTopLeftRadius': '5px','borderBottomLeftRadius': '5px'}}>

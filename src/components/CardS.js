@@ -1,11 +1,13 @@
 import stilePor from './Portfolio.module.css'
 import { Link } from 'react-router-dom'
-
+import { useSelector, useDispatch } from 'react-redux';
 
 const ImgSizeCardS = stilePor.ImgSizeCardS
 const LabelP = stilePor.stilePara
 
 const CardS = (props) => {
+
+    const ValueView = useSelector((state) => state.ToggleLight.value)
 
 return(
 <>
@@ -15,7 +17,7 @@ return(
 <div className="col-12 col-lg-4 p-2 bg-trasparent d-flex">
 
 <Link to={props.id}
-className={`p-1 bg-light col-12 d-flex rounded shadow text-black text-decoration-none pe-auto`}>
+className={`p-1 ${ValueView ? 'bg-light' : 'bg-secondary'} col-12 d-flex rounded shadow text-black text-decoration-none pe-auto`}>
 
 <div style={{'backgroundImage': `url(${props.bg})`, 'backgroundSize': 'cover', 
 'backgroundPosition' : 'center center'}}

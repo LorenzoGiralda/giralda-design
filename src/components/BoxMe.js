@@ -4,6 +4,8 @@ import Insta from "../img/icon-instagram.png";
 import Linkedin from "../img/icon-linkedin.png";
 import GitHub from "../img/icon-github.png";
 
+import { useSelector, useDispatch } from 'react-redux';
+
 const SocialMap = [
   {
     img: Fb,
@@ -28,9 +30,13 @@ const SocialMap = [
 ];
 
 const BoxMe = () => {
+
+  const ValueView = useSelector((state) => state.ToggleLight.value)
+
   return (
     <div className="d-flex flex-column flex-lg-row align-items-center rounded justify-content-center p-2">
-      <div className="shadow bg-light justify-content-center justify-content-lg-start rounded  me-0 me-lg-3 mb-3 mb-lg-0 d-flex flex-column flex-lg-row flex-lg-nowrap align-items-center h-100">
+      <div className={`${ValueView ? 'bg-light' : 'bg-secondary'} shadow justify-content-center justify-content-lg-start rounded
+      me-0 me-lg-3 mb-3 mb-lg-0 d-flex flex-column flex-lg-row flex-lg-nowrap align-items-center h-100`}>
         <div className="d-flex h-100 align-items-end">
           <img style={{'width': '1300px'}} className="img-fluid" src={Me} alt="Lorenzo Giralda - immagine del profilo"></img>
         </div>
@@ -46,8 +52,8 @@ const BoxMe = () => {
         )}
         </section>
       </div>
-      <div className="shadow bg-light rounded p-2 d-flex align-items-center h-100">
-    <p className="m-0 p-0">
+      <div className={`shadow rounded p-2 d-flex align-items-center h-100 ${ValueView ? 'bg-light' : 'bg-secondary text-white'}`}>
+    <p className={`m-0 p-0`}>
       Mi chiamo <strong>Lorenzo Giralda</strong>. Sono un graphic e web designer con oltre 10 anni di esperienza nel settore, 
       sempre pieno di stimoli e idee che mi permettono di dar vita a nuovi progetti. Nel mio percorso lavorativo posso vantare esperienze importanti,
       come l'essere stato titolare di uno studio grafico a Roma, aver realizzato un sito e-commerce per la vendita di servizi di grafica e stampa 

@@ -310,7 +310,7 @@ const BlogHome = () => {
 
 
     useEffect(() => {
-        if(BlogFilterValue.payload !== ''){
+        if(BlogFilterValue && BlogFilterValue.payload !== ''){
         const filtra = BlogValue.filter(dato => dato.categoria === BlogFilterValue.payload)
         console.log(BlogFilterValue,'dato payload blogredux')
         ChangeBlog(filtra)

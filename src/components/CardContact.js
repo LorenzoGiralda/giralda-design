@@ -1,13 +1,18 @@
 import ContactStyle from './Contact.module.css'
 
+import { useSelector, useDispatch } from 'react-redux';
+
 const imgFB = ContactStyle.resizeContact
 const imgGeneric = ContactStyle.Contact
 const resMaps = ContactStyle.Maps
 
 const CardContact = (props) => {
+
+    const ValueView = useSelector((state) => state.ToggleLight.value)
+
 return(
-<div className={`${props.contact[0].categoria === 'moderno' ? 'mt-3' : 'mt-0'} col-12 mt-lg-4 col-lg-8 p-3 bg-light m-auto`}>
-<div className="col-12 p-2 bg-light shadow rounded">
+<div className={`${props.contact[0].categoria === 'moderno' ? 'mt-3' : 'mt-0'} col-12 mt-lg-4 col-lg-8 p-3 m-auto`}>
+<div className={`${ValueView ? 'bg-light' : 'bg-secondary'} col-12 p-2 shadow rounded`}>
 <div className="d-flex justify-content-center">
 {props.contact[0].testo !== 'Via del Progresso, 27 - Grotte di Castro (VT)' ?
 <img className="img-fluid" src={props.bg} alt=""></img> :
@@ -18,7 +23,8 @@ className={`${resMaps} w-100`}></iframe>
 { props.contact[0].testo !== 'Via del Progresso, 27 - Grotte di Castro (VT)' ?
 <div className="d-flex flex-wrap justify-content-center justify-content-lg-evenly">
 { props.contact.map( dato =>
-<a target="_blank" rel="noreferrer" style={{'cursor':'pointer'}} href={dato.link} className="my-3 mb-lg-0 d-flex p-2 col-12 col-lg-auto justify-content-center align-items-center text-black text-decoration-none">
+<a target="_blank" rel="noreferrer" style={{'cursor':'pointer'}} href={dato.link}
+className={`${ValueView ? 'text-black' : 'text-light'} my-3 mb-lg-0 d-flex p-2 col-12 col-lg-auto justify-content-center align-items-center text-decoration-none`}>
 <label style={{'cursor':'pointer'}} className="pe-3">{dato.testo}</label>
 <div><img className={dato.testo === 'Seguimi su' ? imgFB : imgGeneric}
 src={dato.img} alt=""></img></div>
@@ -27,7 +33,7 @@ src={dato.img} alt=""></img></div>
 </div>
 : <div className="d-flex flex-wrap justify-content-center justify-content-lg-evenly">
 { props.contact.map( dato =>
-<a style={{'cursor':'pointer'}} target="_blank" rel="noreferrer" href='https://maps.app.goo.gl/Xmyp35tqHb9mEP457' className="my-3 mb-lg-0 d-flex flex-column flex-lg-row text-center p-2 col-12 col-lg-auto justify-content-center align-items-center text-black text-decoration-none">
+<a style={{'cursor':'pointer'}} target="_blank" rel="noreferrer" href='https://maps.app.goo.gl/Xmyp35tqHb9mEP457' className={`${ValueView ? 'text-black' : 'text-light'} my-3 mb-lg-0 d-flex flex-column flex-lg-row text-center p-2 col-12 col-lg-auto justify-content-center align-items-center text-decoration-none`}>
 <div><img style={{'width': '35px'}}
 src={dato.img} alt=""></img></div>
 <label style={{'cursor':'pointer'}} className="d-none d-lg-flex ps-3">{dato.testo}</label>

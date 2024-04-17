@@ -15,11 +15,12 @@ const TestataFilter = (props) => {
 const dispatch = useDispatch()
 
 const toggleValue = useSelector((state) => state.ToggleFilter.value)
+const ValueView = useSelector((state) => state.ToggleLight.value)
 
 return(
 <div className="col-12 mt-4 d-flex align-items-center justify-content-center flex-wrap flex-lg-nowrap">
 
-<div className='w-100 text-center'>
+<div className={`${ValueView ? 'text-dark' : 'text-white'} w-100 text-center`}>
 {props.DatiLavorazioni &&
 <h4>{toggleValue === false || toggleValue === undefined  ? 'Seleziona una categoria' :'Seleziona una lavorazione' }</h4>
 }

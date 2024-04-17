@@ -2,10 +2,20 @@ import cooffee from '../img/icon-coffee.png';
 
 import { useState } from 'react';
 
+import emailjs from 'emailjs-com' ; 
+
 import ModalForm from './ModalForm';
+
+import { useSelector, useDispatch } from 'react-redux';
 
 
 const Form = () => {
+
+  const ValueView = useSelector((state) => state.ToggleLight.value)
+
+const SERVICE_ID = "service_z7gqk2n" ; 
+const TEMPLATE_ID = "template_1hm7rnp" ; 
+const PUBLIC_KEY = "gPvC4XQHeepoWOXN1" ; 
 
 const [stateNome, changeNome] = useState(undefined);
 const [stateCognome, changeCognome] = useState(undefined);
@@ -58,6 +68,7 @@ const ValidateCognome = (event) => {
 };
 
 const ValidateMail = (event) => {
+
   if (event.target.value === "") {
     changeMail(event.target.value);
   } else {
@@ -85,9 +96,16 @@ classCognomeLabel = stateCognome.length <= 3
 let classMail = ''
 let classMailLabel = ''
 
-if(stateMail !== undefined){
-classMail = stateMail.length <= 3 ? 'border border-danger' : ''
-classMailLabel = stateMail.length <= 3  
+
+
+function validateEmail(Email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(Email);
+}
+
+if(validateEmail(stateMail) === false && stateMail !== undefined){
+classMail = validateEmail(stateMail) === false ? 'border border-danger' : ''
+classMailLabel = validateEmail(stateMail) === false
 }
 
 let classTesto = ''
@@ -99,9 +117,30 @@ classTestoLabel = stateTesto.length <= 3
 }
 
 
+const handleOnSubmit = (e) => {
+  e.preventDefault();
+  emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
+    .then((result) => {
+      console.log(result.text);
+      alert('Message Sent Successfully')
+    }, (error) => {
+      console.log(error.text);
+      alert('Something went wrong!')
+    });
+changeNome(undefined)
+changeCognome(undefined)
+changeMail(undefined)
+changeServizio(undefined)
+changeTesto(undefined)
+changePrivacy(false)
+  e.target.reset()
+};
+
 return(
 
-<form onSubmit={(event) => {event.preventDefault()}} className="col-12 col-lg-6 d-flex flex-wrap justify-content-center bg-light p-2 my-5 rounded shadow" id="form" method="post" action="formInvio.php">
+<form onSubmit={handleOnSubmit} className={`col-12 col-lg-6 d-flex flex-wrap justify-content-center
+p-2 my-5 rounded shadow ${ValueView ? 'bg-light' : 'bg-secondary text-light'}`}
+id="form" method="post" action="formInvio.php">
 
 <div className='col-12 d-flex flex-column align-items-center my-2 mb-4'>
 <h3 className='fw-bold'>CONTATTARMI?</h3>
@@ -134,7 +173,7 @@ className={`${classCognome} form-control shadow-sm`}></input>
 <div className="p-2 col-12">
 <div className='mb-3'>
 <label for="Email" class="form-label">E-mail:</label>
-<input onBlur={ValidateMail} onChange={(event) => {event.target.value.length > 3 && changeMail(event.target.value)}}
+<input onBlur={ValidateMail} onChange={(event) => {validateEmail(event.target.value) === true && changeMail(event.target.value)}}
 placeholder="Mario Rossi" id="Email" name="Email" type="email"
 className={`${classMail} form-control shadow-sm`}></input>
 {classMailLabel ? <label className='mt-2 text-danger'>Compila il campo correttamente!</label> : ''}
@@ -176,7 +215,7 @@ className={`${classTesto} form-control shadow-sm`} name="Testo" id="testo" rows=
 
 
 <div className="p-2 col-12 mt-2">
-<button style={{'cursor': 'pointer'}} type="submit" disabled={disable}
+<button value='Send' style={{'cursor': 'pointer'}} type="submit" disabled={disable}
 class="fw-bold py-2 w-100 btn shadow-sm bg-white border-0">
 INVIO</button>
 </div>

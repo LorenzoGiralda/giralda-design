@@ -60,6 +60,8 @@ import AltreInsegna from '../img/insegna-regina.png'
 import AltreOnlus from '../img/calendario.png'
 import SitoAle from '../img/sito-ale.png'
 import SitoFede from '../img/sito-fede.png'
+import AppCalcio from '../img/sito-app-calcio.png'
+import AppViaggi from '../img/sito-app-viaggi.png'
 
 
 
@@ -578,6 +580,7 @@ const CardDatiPortfolio = [
     formato: '29 x 47 cm (olandese)',
     supporto: 'applicazione adesivo vinilico 100 gr',
     img: AltreOnlus,
+    img2: '',
     alt: 'calendario olandese', 
     },
     {
@@ -589,6 +592,7 @@ const CardDatiPortfolio = [
     formato: '',
     supporto: '',
     img: SitoAle,
+    img2: '',
     alt: 'sito web Parisi',
     link: 'http://www.parisinutrizionista.altervista.org/index.html' 
     },
@@ -601,6 +605,7 @@ const CardDatiPortfolio = [
     formato: '',
     supporto: '',
     img: SitoFede,
+    img2: '',
     alt: 'sito web Trattoria',
     link: 'https://www.trattorialaquercia.it/index.html' 
     },
@@ -612,7 +617,8 @@ const CardDatiPortfolio = [
     dettagli: 'Agenzia viaggi "Sognando Viaggiando"',
     formato: '',
     supporto: '',
-    img: SitoFede,
+    img: AppViaggi,
+    img2: '',
     alt: 'Web app agenzia viaggi',
     link: 'https://app-viaggi-88322.web.app/' 
     },
@@ -624,7 +630,8 @@ const CardDatiPortfolio = [
     dettagli: 'FootbalLife',
     formato: '',
     supporto: '',
-    img: SitoFede,
+    img: AppCalcio,
+    img2: '',
     alt: 'Web app FootbalLife',
     link: 'https://app-footballife.web.app/' 
     },
