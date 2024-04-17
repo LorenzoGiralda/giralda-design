@@ -26,7 +26,7 @@ const [stateTesto, changeTesto] = useState(undefined);
 const [statePrivacy, changePrivacy] = useState(false);
 
 
-let disable = 'true'
+let disable = true
 
 if(stateNome !== '' && stateCognome !== '' && stateMail !== '' && stateServizio !== undefined && stateTesto !== '' && statePrivacy !== false){
 disable = ''

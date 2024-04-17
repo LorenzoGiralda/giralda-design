@@ -5,10 +5,13 @@ const IconRounded = (props) => {
 
     const dispatch = useDispatch()
 
+    console.log(props.statoVista, 'statovista')
+
 return(
-<btn onClick={() => {props.changeStateView(props.nome); dispatch(ChangeToggleView()) }} className={`${props.stile} ${props.class}`}>
+<button disabled={props.statoVista === props.nome ? true : false}  onClick={() => {props.changeStateView(props.nome); dispatch(ChangeToggleView()) }} className={`${props.stile} ${props.class}`}>
 <img className="img-fluid" src={props.img} alt={props.nome}></img>
-</btn>
+</button>
 )};
 
+// disabled={props.statoVista === props.nome ? 'true' : 'false'} 
 export default IconRounded;

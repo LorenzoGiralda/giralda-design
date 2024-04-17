@@ -126,6 +126,7 @@ return(
 <IconRounded
 changeStateView = {changeStateView}
 stile = {dato.nome === stateView ? dato.active : dato.stile}
+statoVista = {stateView}
 nome = {dato.nome}
 img = {dato.img}
 class = {dato.class}
@@ -162,6 +163,7 @@ changeStateView = {changeStateView}
 stile = {dato.nome === stateView ? dato.active : dato.stile}
 nome = {dato.nome}
 img = {dato.img}
+statoVista = {stateView}
 class = {dato.class}
 ></IconRounded>
 )}
